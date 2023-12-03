@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="free design template, CSS template, HTML website" />
+<meta name="description" content="Free Design Template, Free CSS Website, XHTML CSS layout" />
+<link rel="stylesheet" type="text/css" href="{% static 'templatemo_style.css' %}"/>
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Customer Name");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter Password");
+	formObj.t2.focus();
+	return false;
+	}
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please Enter Contact No");
+	formObj.t3.focus();
+	return false;
+	}
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please Enter Address");
+	formObj.t4.focus();
+	return false;
+	}
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please Enter Email id");
+	formObj.t5.focus();
+	return false;
+	}
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+</head>
+<body><br/><br/>
+<!--  Download Free CSS Templates from www.templatemo.com  -->	
+<div id="templatemo_header_panel">
+	<div id="templatemo_header_section">
+    	<div id="templatemo_title_section"><center>ONLINE BOOK STORE</center></div>
+        <div id="tagline"></div>
+    </div>
+</div> <!-- end of haeder -->
+
+<div id="templatemo_menu_panel">
+    <div id="templatemo_menu_section">
+        <ul>
+	  <li><a href="{% url 'index' %}"  class="current">Home</a></li>
+      <li><a href="{% url 'Admin' %}">Administrator</a></li>
+	  <li><a href="{% url 'Login' %}">Existing&nbsp;User</a></li>
+	  <li><a href="{% url 'Register' %}">New&nbsp;User</a></li>
+	 
+			
+		</ul>
+    </div>
+</div> <!-- end of menu -->
+<br/>
+<center>
+<form name="f1" method="post" action={% url 'RegisterAction' %} OnSubmit="return validate()">
+	{% csrf_token %}<br/>
+   <h2><b>New User Signup Screen</b></h2>
+   <br/>
+	<font size="" face="verdana" color="red"><center>{{ data|safe }}</center></font>
+						
+						<table align="center" width="40" >
+			 <tr><td><b>Username</b></td><td><input type="text" name="t1" style="font-family: Comic Sans MS" size=30/></td></tr>
+			
+			<tr><td><b>Password</b></td><td><input type="password" name="t2" style="font-family: Comic Sans MS" size=30/></td></tr>
+		
+
+		   <tr><td><b>Contact&nbsp;No</b></td><td><input type="text" name="t3" style="font-family: Comic Sans MS" size=30/></td></tr>
+
+			<tr><td><b>Shipping&nbsp;Address</b></td><td><textarea rows="6" cols="29" name="t4" style="font-family: Comic Sans MS"></textarea></td></tr>
+
+			
+			<tr><td><b>Emailid</b></td><td><input type="text" name="t5" style="font-family: Comic Sans MS" size=30/></td></tr>
+
+			
+
+
+         
+			<tr><td></td><td><input type="submit" value="Register"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+</body>
+</html>

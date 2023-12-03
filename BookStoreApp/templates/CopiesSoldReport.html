@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="free design template, CSS template, HTML website" />
+<meta name="description" content="Free Design Template, Free CSS Website, XHTML CSS layout" />
+<link rel="stylesheet" type="text/css" href="{% static 'templatemo_style.css' %}"/>
+</head>
+<body><br/><br/>
+<!--  Download Free CSS Templates from www.templatemo.com  -->	
+<div id="templatemo_header_panel">
+	<div id="templatemo_header_section">
+    	<div id="templatemo_title_section"><center>ONLINE BOOK STORE</center></div>
+        <div id="tagline"></div>
+    </div>
+</div> <!-- end of haeder -->
+
+<div id="templatemo_menu_panel" style="text-align: left;">
+    <div id="templatemo_menu_section">
+
+	     <ul>
+			<li><a href="{% url 'AdminHome' %}" class="current">Home</a></li>  
+            <li><a href="{% url 'AddBook' %}">Add Book</a></li>
+			<li><a href="{% url 'Delete' %}">Remove Product</a></li>
+			<li><a href="{% url 'UpdatePrice' %}">Update Price</a></li>
+			<li><a href="{% url 'ViewPurchase' %}">Bookings History</a></li>
+			<li><a href="{% url 'ViewBooks' %}">View Books</a></li>
+			<li><a href="{% url 'ViewRatings' %}">View Ratings</a></li>
+			<li><a href="{% url 'ManageOrders' %}">Manage Orders</a></li>
+            <li><a href="{% url 'index' %}" class="last">Logout</a></li>                
+        </ul> 
+    </div>
+</div> <!-- end of menu -->
+<br/>
+   <br/>
+	<font size="" face="verdana" color="white"><center>{{ data|safe }}</center></font>
+	<h3><center><a href="{% url 'CopiesSoldDownload' %}">Copies Sold</a></center></h3>
+<table align="center" width="80%">
+			<tr>
+			<td>
+				
+
+	<p align="justify"><font size="3" style="font-family: Comic Sans MS">
+	<p align="justify"><font size="3" style="font-family: Comic Sans MS">
+	</p>
+	
+	</p>
+	
+
+	
+</body>
+</html>

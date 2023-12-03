@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="free design template, CSS template, HTML website" />
+<meta name="description" content="Free Design Template, Free CSS Website, XHTML CSS layout" />
+<link rel="stylesheet" type="text/css" href="{% static 'templatemo_style.css' %}"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Book Search String");
+	formObj.t1.focus();
+	return false;
+	}
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+</head>
+<body><br/><br/>
+<!--  Download Free CSS Templates from www.templatemo.com  -->	
+<div id="templatemo_header_panel">
+	<div id="templatemo_header_section">
+    	<div id="templatemo_title_section"><center>ONLINE BOOK STORE</center></div>
+        <div id="tagline"></div>
+    </div>
+</div> <!-- end of haeder -->
+
+<div id="templatemo_menu_panel">
+    <div id="templatemo_menu_section">
+       <ul>
+		<li><a href="{% url 'UserHome' %}"  class="current">Home</a></li>
+            <li><a href="{% url 'SearchBook' %}">Search Books</a></li>
+			<li><a href="{% url 'ViewShippingDetails' %}">View Shipping Details</a></li>
+			<li><a href="{% url 'ReviewOrders' %}">Review Order Details</a></li>
+			<li><a href="{% url 'Ratings' %}">Feedback</a></li>
+			<li><a href="{% url 'ViewCart' %}">	<i class="fa badge fa-lg" value=8>&#xf07a;</i> Cart</a></li>
+			<li><a href="{% url 'index' %}">Logout</a></li>
+                             
+        </ul> 
+</div> <!-- end of menu -->
+<br/>
+	<center>
+<form name="f1" method="post" action={% url 'SearchBookAction' %} OnSubmit="return validate()">
+	{% csrf_token %}<br/>
+   <h2><b>Search Book Screen</b></h2>
+   <br/>
+	<font size="" face="verdana" color="red"><center>{{ data|safe }}</center></font>
+						
+						<table align="center" width="40" >
+			 <tr><td><b>Search Category|Title|Author</b></td><td><input type="text" name="t1" style="font-family: Comic Sans MS" size="40"/></td></tr>
+         
+			<tr><td></td><td><input type="submit" value="Search Book"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+				
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="free design template, CSS template, HTML website" />
+<meta name="description" content="Free Design Template, Free CSS Website, XHTML CSS layout" />
+<link rel="stylesheet" type="text/css" href="{% static 'templatemo_style.css' %}"/>
+</head>
+<body><br/><br/>
+<!--  Download Free CSS Templates from www.templatemo.com  -->	
+<div id="templatemo_header_panel">
+	<div id="templatemo_header_section">
+    	<div id="templatemo_title_section"><center>ONLINE BOOK STORE</center></div>
+        <div id="tagline"></div>
+    </div>
+</div> <!-- end of haeder -->
+
+<div id="templatemo_menu_panel">
+    <div id="templatemo_menu_section">
+       <ul>
+		    <li><a href="{% url 'UserHome' %}"  class="current">Home</a></li>
+            <li><a href="{% url 'SearchBook' %}">Search Books</a></li>
+			<li><a href="{% url 'ViewShippingDetails' %}">View Shipping Details</a></li>
+			<li><a href="{% url 'ReviewOrders' %}">Review Order Details</a></li>
+			<li><a href="{% url 'Ratings' %}">Ratings/Feedback</a></li>
+			<li><a href="{% url 'index' %}">Logout</a></li>
+                             
+        </ul> 
+</div> <!-- end of menu -->
+<br/>
+	<center>
+<form name="f1" method="post" action={% url 'PaymentAction' %} OnSubmit="return validate()">
+	{% csrf_token %}<br/>
+   <h2><b>Confirmation Screen</b></h2>
+   <br/>
+	<font size="" face="verdana" color="red"><center>{{ data|safe }}</center></font>
+						
+						<table align="center" width="40" >
+							<tr>
+								<td>
+						<p align="justify"><font size="3" style="font-family: Comic Sans MS">
+						<p align="justify"><font size="3" style="font-family: Comic Sans MS">
+						               Order Confirmed</p>
+						</p>
+         
+			<tr><td></td><td><input type="submit" value="Complete Order"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+</body>
+</html>

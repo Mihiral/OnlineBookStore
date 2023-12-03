@@ -1,0 +1,28 @@
+create database onlinebookstore;
+use onlinebookstore;
+
+create table addbook(book_id varchar(50) primary Key,
+book_name varchar(50),
+category varchar(50),
+author_names varchar(250),
+subject varchar(50),
+cost varchar(10),
+image  varchar(150));
+
+
+create table newuser(username varchar(50),password varchar(50),contact_no varchar(15),address varchar(100),email  varchar(100));
+
+create table orders(order_id int,username varchar(50),
+card_no varchar(50),
+cvv_no varchar(12),
+expiry_date varchar(20),
+order_date varchar(30),
+product_id varchar(100),
+total_amount double,
+order_status varchar(50));
+
+create table feedback(username varchar(50),
+book_id varchar(20),
+ratings varchar(10),
+feedback varchar(300),
+feedback_date varchar(30));

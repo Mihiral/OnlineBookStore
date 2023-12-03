@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="free design template, CSS template, HTML website" />
+<meta name="description" content="Free Design Template, Free CSS Website, XHTML CSS layout" />
+<link rel="stylesheet" type="text/css" href="{% static 'templatemo_style.css' %}"/>
+<style>
+	/* Style for the button-like anchor links */
+	.button-link {
+		display: inline-block;
+		padding: 10px 20px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #3498db; /* Set the background color */
+		color: #fff; /* Set the text color */
+		border-radius: 5px; /* Optional: Add rounded corners */
+		transition: background-color 0.3s ease; /* Add a smooth transition effect */
+	}
+
+	/* Hover effect */
+	.button-link:hover {
+		background-color: #2980b9; /* Change the background color on hover */
+	}
+</style>
+</head>
+<body><br/><br/>
+<!--  Download Free CSS Templates from www.templatemo.com  -->	
+<div id="templatemo_header_panel">
+	<div id="templatemo_header_section">
+    	<div id="templatemo_title_section"><center>ONLINE BOOK STORE</center></div>
+        <div id="tagline"></div>
+    </div>
+</div> <!-- end of haeder -->
+
+<div id="templatemo_menu_panel" style="text-align: left;">
+    <div id="templatemo_menu_section">
+
+	     <ul>
+            <li><a href="{% url 'AddBook' %}"  class="current">Add Book</a></li>
+			<li><a href="{% url 'Delete' %}">Remove Product</a></li>
+			<li><a href="{% url 'UpdatePrice' %}">Update Price</a></li>
+			<li><a href="{% url 'ViewPurchase' %}">Bookings History</a></li>
+			<li><a href="{% url 'ViewBooks' %}">View Books</a></li>
+			<li><a href="{% url 'ViewRatings' %}">View Ratings</a></li>
+			<li><a href="{% url 'ManageOrders' %}">Manage Orders</a></li>
+            <li><a href="{% url 'index' %}" class="last">Logout</a></li>                
+        </ul> 
+    </div>
+</div> <!-- end of menu -->
+<br/>
+   <br/>
+	<font size="" face="verdana" color="white"><center>{{ data|safe }}</center></font>
+	<div style="text-align: center;">
+        <table align="center" width="80%">
+			<tr>
+			<td>
+				<h2>Quick Reports View</h2>
+	<p align="justify"><font size="3" style="font-family: Comic Sans MS">
+	<p align="justify"><font size="3" style="font-family: Comic Sans MS">
+	</p>
+	<a href="{% url 'AvgRatings' %}" class="button-link">Average ratings</a>
+    <a href="{% url 'Topsales' %}" class="button-link">Top Sales of the week</a>
+    <a href="{% url 'CopiesSold' %}" class="button-link">Total Copies sold</a>
+	</p>
+</td>
+</tr>
+</table>
+</div>
+	
+</body>
+</html>
